@@ -21,64 +21,64 @@
         </div>
         <form [formGroup]="myForm">
           <div class="modal-body">
-  
-  
-            
-  
-              
+
+
+
+
+
                 <div class="form-group text-left">
                   <label for="doctorId">doctorId</label>
-                  
+
                     <input formControlName="doctorId" type="text" class="form-control">
-                  
+
                 </div>
-              
-            
-  
-              
+
+
+
+
                 <div class="form-group text-left">
                   <label for="firstName">firstName</label>
-                  
+
                     <input formControlName="firstName" type="text" class="form-control">
-                  
+
                 </div>
-              
-            
-  
-              
+
+
+
+
                 <div class="form-group text-left">
                   <label for="lastName">lastName</label>
-                  
+
                     <input formControlName="lastName" type="text" class="form-control">
-                  
+
                 </div>
-              
-            
-  
-              
+
+
+
+
                 <div class="form-group text-left">
                   <label for="speciality">speciality</label>
-                  
+
                     <input formControlName="speciality" type="text" class="form-control">
-                  
+
                 </div>
-              
-            
-  
+
+
+
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
             <button (click)="addParticipant(myForm);" type="submit" class="btn btn-success" data-dismiss="modal">Confirm</button>
-  
+
           </div>
         </form>
       </div>
     </div>
   </div>
-  
-  
-  
-  
+
+
+
+
   <div class="modal fade" id="updateParticipantModal" tabindex="-1" role="dialog" aria-labelledby="updateParticipantModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -88,47 +88,47 @@
         </div>
         <form [formGroup]="myForm">
           <div class="modal-body">
-  
-  
-            
+
+
+
               <div class="form-group text-left">
                 <label for="doctorId">doctorId</label>
-  
-                
-                  <input [ngModel]="doctorId" formControlName="doctorId" class="form-control" disabled="disabled">  
-                
-  
+
+
+                  <input [ngModel]="doctorId" formControlName="doctorId" class="form-control" disabled="disabled">
+
+
               </div>
-            
+
               <div class="form-group text-left">
                 <label for="firstName">firstName</label>
-  
-                
+
+
                   <input [ngModel]="firstName"formControlName="firstName" type="text" class="form-control">
-                
-  
+
+
               </div>
-            
+
               <div class="form-group text-left">
                 <label for="lastName">lastName</label>
-  
-                
+
+
                   <input [ngModel]="lastName"formControlName="lastName" type="text" class="form-control">
-                
-  
+
+
               </div>
-            
+
               <div class="form-group text-left">
                 <label for="speciality">speciality</label>
-  
-                
+
+
                   <input [ngModel]="speciality"formControlName="speciality" type="text" class="form-control">
-                
-  
+
+
               </div>
-            
-  
-  
+
+
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -138,9 +138,9 @@
       </div>
     </div>
   </div>
-  
-  
-  
+
+
+
   <div class="modal fade" id="deleteParticipantModal" tabindex="-1" role="dialog" aria-labelledby="deleteParticipantModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -160,22 +160,22 @@
       </div>
     </div>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
   <div class="container">
       <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
           <strong>Error:</strong> {{errorMessage}}
       </div>
-    
+
     <div class="row">
       <div class="col-md-9">
           <h1 class="participant-title" id='participantName'>Doctor</h1>
@@ -197,30 +197,30 @@
         <table class="table table-responsive">
           <thead class="thead">
             <tr class="thead-cols">
-              
-                  <th class="info">doctorId</th>
-              
-                  <th class="info">firstName</th>
-              
-                  <th class="info">lastName</th>
-              
-                  <th class="info">speciality</th>
-              
+
+                  <th class="info">ID</th>
+
+                  <th class="info">First Name</th>
+
+                  <th class="info">Last Name</th>
+
+                  <th class="info">Speciality</th>
+
                 <th class="info-actions">Actions</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let participant of allParticipants">
-  
-              
+
+
                   <td class="participant-properties">{{participant.doctorId}}</td>
-              
+
                   <td class="participant-properties">{{participant.firstName}}</td>
-              
+
                   <td class="participant-properties">{{participant.lastName}}</td>
-              
+
                   <td class="participant-properties">{{participant.speciality}}</td>
-              
+
               <td>
                 <button (click)="getForm(participant.doctorId);" type="button" class="btn btn-update" data-toggle="modal" data-target="#updateParticipantModal">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -234,7 +234,7 @@
                  </g>
                  </svg>
                 </button>
-  
+
                 <button (click)="setId(participant.doctorId);" type="button" class="btn btn-delete" data-toggle="modal" data-target="#deleteParticipantModal">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     width="13.8px" height="16px" viewBox="0 0 65.9 76.2" style="enable-background:new 0 0 65.9 76.2;" xml:space="preserve">

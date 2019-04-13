@@ -16,6 +16,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { PatientService } from './Patient.service';
 import 'rxjs/add/operator/toPromise';
+import { Diagnosis } from 'app/by.bsuir.medcert';
 
 @Component({
   selector: 'app-patient',
@@ -123,7 +124,7 @@ export class PatientComponent implements OnInit {
         'lastName': null,
         'diagnoses': null
       });
-      this.loadAll(); 
+      this.loadAll();
     })
     .catch((error) => {
       if (error === 'Server error') {
@@ -242,5 +243,9 @@ export class PatientComponent implements OnInit {
       'lastName': null,
       'diagnoses': null
     });
+  }
+
+  mapToDiagnosisNames(diagnoses: Diagnosis[]): string {
+    return diagnoses ? diagnoses.map(d => d.name).join() : '';
   }
 }

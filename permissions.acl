@@ -15,6 +15,15 @@
 /**
  * Access control rules for tutorial-network
  */
+rule MedicalSertificateReadPatient {
+  description: "Certifiacates can be modified by admin"
+  participant(p): "by.bsuir.medcert.Patient"
+  operation: READ
+  resource(r): "by.bsuir.medcert.MedicalCertificate"
+  condition: (r.recipient.getIdentifier() == p.getIdentifier())
+  action: ALLOW
+}
+
 rule MedicalSertificateAdminACL {
   description: "Certifiacates can be modified by admin"
   participant: "org.hyperledger.composer.system.NetworkAdmin"

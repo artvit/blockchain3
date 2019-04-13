@@ -32,15 +32,15 @@
         <thead class="thead">
           <tr class="thead-cols">
 
-                <th class="info">certificateId</th>
+                <th class="info">ID</th>
 
-                <th class="info">createdAt</th>
+                <th class="info">Date</th>
 
-                <th class="info">diagnosis</th>
+                <th class="info">Diagnosis</th>
 
-                <th class="info">issuer</th>
+                <th class="info">Doctor</th>
 
-                <th class="info">recipient</th>
+                <th class="info">Patient</th>
 
               <th class="info-actions">Actions</th>
           </tr>
@@ -51,13 +51,13 @@
 
                 <td class="asset-properties">{{asset.certificateId}}</td>
 
-                <td class="asset-properties">{{asset.createdAt}}</td>
+                <td class="asset-properties">{{asset.createdAt | date: 'medium' }}</td>
 
-                <td class="asset-properties">{{asset.diagnosis}}</td>
+                <td class="asset-properties">{{asset.diagnosis.name}}</td>
 
-                <td class="asset-properties">{{asset.issuer}}</td>
+                <td class="asset-properties">{{asset.issuer.firstName}} {{asset.issuer.lastName}}</td>
 
-                <td class="asset-properties">{{asset.recipient}}</td>
+                <td class="asset-properties">{{asset.recipient.firstName}} {{asset.recipient.lastName}}</td>
 
             <td>
               <button (click)="getForm(asset.certificateId);" type="button" class="btn btn-update" data-toggle="modal" data-target="#updateAssetModal">

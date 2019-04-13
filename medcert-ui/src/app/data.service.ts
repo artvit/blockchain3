@@ -13,7 +13,7 @@
  */
 
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { Http, Response, Headers, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -24,16 +24,21 @@ export class DataService<Type> {
     private actionUrl: string;
     private headers: Headers;
 
+    private searchParams: URLSearchParams;
+
     constructor(private http: Http) {
         this.actionUrl = '/api/';
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json');
         this.headers.append('Accept', 'application/json');
+
+        this.searchParams = new URLSearchParams();
+        this.searchParams.set('filter', JSON.stringify({include: 'resolve'}))
     }
 
     public getAll(ns: string): Observable<Type[]> {
         console.log('GetAll ' + ns + ' to ' + this.actionUrl + ns);
-        return this.http.get(`${this.actionUrl}${ns}`)
+        return this.http.get(`${this.actionUrl}${ns}`, { search: this.searchParams })
           .map(this.extractData)
           .catch(this.handleError);
     }

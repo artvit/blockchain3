@@ -23,27 +23,27 @@
         <div class="modal-body">
 
 
-          
 
-            
+
+
               <div class="form-group text-left">
                 <label for="diagnosisId">diagnosisId</label>
-                
-                  <input formControlName="diagnosisId" type="text" class="form-control">
-                
-              </div>
-            
-          
 
-            
+                  <input formControlName="diagnosisId" type="text" class="form-control">
+
+              </div>
+
+
+
+
               <div class="form-group text-left">
                 <label for="name">name</label>
-                
+
                   <input formControlName="name" type="text" class="form-control">
-                
+
               </div>
-            
-          
+
+
 
         </div>
         <div class="modal-footer">
@@ -70,25 +70,25 @@
         <div class="modal-body">
 
 
-          
+
             <div class="form-group text-left">
               <label for="diagnosisId">diagnosisId</label>
-              
-              
-                <input [ngModel]="diagnosisId" formControlName="diagnosisId" class="form-control" disabled="disabled">  
-              
+
+
+                <input [ngModel]="diagnosisId" formControlName="diagnosisId" class="form-control" disabled="disabled">
+
 
             </div>
-          
+
             <div class="form-group text-left">
               <label for="name">name</label>
-              
-              
+
+
                 <input [ngModel]="name"formControlName="name" type="text" class="form-control">
-              
+
 
             </div>
-          
+
 
 
         </div>
@@ -137,7 +137,7 @@
 	<div *ngIf="errorMessage" class="alert alert-danger" role="alert">
 		<strong>Error:</strong> {{errorMessage}}
 	</div>
-  
+
   <div class="row">
     <div class="col-md-9">
         <h1 class="asset-title" id='assetName'>Diagnosis</h1>
@@ -159,22 +159,21 @@
       <table class="table table-responsive">
         <thead class="thead">
           <tr class="thead-cols">
-            
-                <th class="info">diagnosisId</th>
-            
-                <th class="info">name</th>
-            
+
+                <th class="info">ID</th>
+
+                <th class="info">Name</th>
+
               <th class="info-actions">Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let asset of allAssets">
 
-            
                 <td class="asset-properties">{{asset.diagnosisId}}</td>
-            
+
                 <td class="asset-properties">{{asset.name}}</td>
-            
+
             <td>
               <button (click)="getForm(asset.diagnosisId);" type="button" class="btn btn-update" data-toggle="modal" data-target="#updateAssetModal">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
