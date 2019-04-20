@@ -12,42 +12,41 @@
  limitations under the License.
 -->
 <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <p class="network-name">medcert@0.0.7.bna</p>
-        <p class="navbar-brand">medcert-ui</p>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="dropdown active">
-            <a class="dropdown-toggle" data-toggle="dropdown">Assets</a>
-            <ul class="dropdown-menu scrollable-menu">
-              
-              <li><a [routerLink]="['/Diagnosis']">Diagnosis</a></li>
-              
-              <li><a [routerLink]="['/MedicalCertificate']">MedicalCertificate</a></li>
-              
-            </ul>
-        </li>
-        <li class="dropdown active">
-          <a class="dropdown-toggle" data-toggle="dropdown">Participants</a>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand">Medical Certificte System</p>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown active">
+          <a class="dropdown-toggle" data-toggle="dropdown">Assets</a>
           <ul class="dropdown-menu scrollable-menu">
-            
-            <li><a [routerLink]="['/Patient']">Patient</a></li>
-            
-            <li><a [routerLink]="['/Doctor']">Doctor</a></li>
-            
+
+            <li><a [routerLink]="['/Diagnosis']">Diagnosis</a></li>
+
+            <li><a [routerLink]="['/MedicalCertificate']">MedicalCertificate</a></li>
+
           </ul>
       </li>
       <li class="dropdown active">
-        <a class="dropdown-toggle" data-toggle="dropdown">Transactions</a>
+        <a class="dropdown-toggle" data-toggle="dropdown">Participants</a>
         <ul class="dropdown-menu scrollable-menu">
-          
-          <li><a [routerLink]="['/AddMedicalCertificate']">AddMedicalCertificate</a></li>
-          
+
+          <li><a [routerLink]="['/Patient']">Patient</a></li>
+
+          <li><a [routerLink]="['/Doctor']">Doctor</a></li>
+
         </ul>
+    </li>
+    <li class="dropdown active">
+      <a class="dropdown-toggle" data-toggle="dropdown">Transactions</a>
+      <ul class="dropdown-menu scrollable-menu">
+
+        <li><a [routerLink]="['/AddMedicalCertificate']">AddMedicalCertificate</a></li>
+
+      </ul>
     </li>
       </ul>
     </div>
   </nav>
-  
+
   <router-outlet></router-outlet>
